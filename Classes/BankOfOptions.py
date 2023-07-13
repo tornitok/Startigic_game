@@ -1,17 +1,18 @@
 
-class BankOfOptions:
-    def init(self, options):
-        self.options = options
+#OptionsBank: is a storage of all the options for each team in the game. Each option will have a unique set of counter-options. 
 
-    def set_options(self, options):
-        self.options = options
+class  BankOfOptions:
+
+    def __init__(self, options = None):
+        self.options = options or []
 
     def get_options(self):
+        print("Options are", self.options)
         return self.options
+    
+    def add_option(self, option):
+        self.options.append(option)
 
-    def __str__(self):
-        sb = []
-        sb.append("Bank of Options:\n")
-        for option in self.options:
-            sb.append(option + "\n")
-        return ''.join(sb)
+    def remove_option(self, option):
+        self.options.remove(option)
+
