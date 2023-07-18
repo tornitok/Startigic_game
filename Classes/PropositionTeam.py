@@ -1,7 +1,7 @@
 # Proposition team: has name and description; has its pool of options which is refreshed at each cycle; acts by choosing one option per cycle.
-
 class PropositionTeam:
-    def __init__(self,PropOptionBank, description = None, objectives = None):
+    def __init__(self,name, PropOptionBank, description = None, objectives = None):
+        self.name = name
         self.PropOptionBank = PropOptionBank
         self.description = description
         self.objectives = objectives
@@ -9,22 +9,29 @@ class PropositionTeam:
 
     def get_description(self):
         return self.description
-
-
-    def get_options(self, PropOptionBank): #This seems to be redundant, as we can get options through PropTeamInstance.PropOptionBank.get_options()
-        print(self.options)
-        return self.options
     
-    def choose_option(self, PropOptions): #PropOptions will be an instance of OptionsBank which is passed to the Proposition Team class method of chosing option
-        print(PropOptionBank)
-        print('Team {self.name}, choose your option')
+    def choose_option(self):
+        options = self.PropOptionBank.get_options()
+        print(f'{self.name}, your options are:  {options}')
+        print(f'{self.name}, choose your option')
         selected_option = input('Enter the option number: ')
-        selected_index = PropOptions[int(selected_option)-1]  #selected_index is the selection of an option by Proposition team
+      
 
-        if selected_option != 0 or selected_option <= len(self.options):
-            print('Team {self.name} chose option {selected_option}')
-        else:
-            print("Invalid option. Chose one of the available options") # needs redirection
-            return None
+        while True:
+
+            try:
+                selected_index = int(selected_option)
+                if 1 <= selected_index <= len(options):
+                    print(f"{self.name}, your choise is option {selected_index}")
+                    return selected_index
+                else:
+                    print("Invalid option. Chose one of the available options")
+
+            except ValueError:
+                print("Invalid option. Chose one of the available options")
+            
+            
+
         
-
+            
+        

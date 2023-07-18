@@ -7,7 +7,6 @@ class  OptionsBank:
         self.options = options or []
 
     def get_options(self):
-        print("Options are", self.options)
         return self.options
     
     def add_option(self, option):
@@ -15,4 +14,5 @@ class  OptionsBank:
 
     def remove_option(self, option):
         self.options.remove(option)
+
 
