@@ -1,22 +1,29 @@
 class OppositionTeam:
-    def init(self, name, description=None, objectives=None):
+    def __init__(self,name, OppOptionsBank, description = None, objectives = None):
         self.name = name
+        self.OppOptionsBank = OppOptionsBank
         self.description = description
         self.objectives = objectives
 
-    def get_options(self, OppBankOfOptions): # i need to fix this one
-        return self.options
-    
-    def choose_option(self, OppOptions): #PropOptions will be an instance of OptionsBank which is passed to the Proposition Team class method of chosing option
-        print(OppOptions)
-        print('Team {self.name}, choose your option')
-        selected_option = input('Enter the option number: ')
-        selected_index = OppOptions[int(selected_option)-1]  #selected_index is the selection of an option by Proposition team
-
-        if selected_option != 0 or selected_option <= len(self.options):
-            print('Team {self.name} chose option {selected_option}')
-        else:
-            print("Invalid option. Chose one of the available options") # needs redirection
-            return None
-
+    def get_description(self):
+        return self.description
  
+    def choose_option(self):
+        options = self.OppOptionsBank.get_options()
+        print(f'{self.name}, your options are:  {options}')
+        print(f'{self.name}, choose your option')
+
+        while True:
+            selected_option = input('Enter the option number: ')
+
+            try:
+                selected_index = int(selected_option)
+                if 1 <= selected_index <= len(options):
+                    print(f"{self.name}, your choise is option {selected_index}")
+                    return selected_index
+                else:
+                    print("Invalid option. Chose one of the available options")
+
+            except ValueError:
+                print("Invalid option. Chose one of the available options")
+            

@@ -14,10 +14,10 @@ class PropositionTeam:
         options = self.PropOptionBank.get_options()
         print(f'{self.name}, your options are:  {options}')
         print(f'{self.name}, choose your option')
-        selected_option = input('Enter the option number: ')
       
 
         while True:
+            selected_option = input('Enter the option number: ')
 
             try:
                 selected_index = int(selected_option)

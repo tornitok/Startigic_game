@@ -1,5 +1,6 @@
 from Classes import PropositionTeam
 from Classes import OptionsBank
+from Classes import OppositionTeam
 
 
 PropOptionBank = OptionsBank.OptionsBank()
@@ -12,3 +13,11 @@ PropOptionBank.add_option("Option 4: Go Eat Some Horse Meat! (5,5)")
 ChinaTeam = PropositionTeam.PropositionTeam(name = 'ChinaTeam', PropOptionBank = PropOptionBank) 
 
 ChinaTeam.choose_option()
+
+
+OppOptionsBank = OptionsBank.OptionsBank()
+OppOptionsBank.add_option("Option 1: Break the blocade with force. 60% success (6,3) or 0.")
+OppOptionsBank.add_option("Option 2: Send in the military but do not try to brake the blockade. (5,5) 60% another incident.")
+
+UsaTeam = OppositionTeam.OppositionTeam(name='UsaTeam', OppOptionsBank = OppOptionsBank)
+# UsaTeam.choose_option()
