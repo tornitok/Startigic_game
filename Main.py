@@ -1,4 +1,4 @@
-from Classes import BankOfOptions, EventBank, MakeChoice, RoundCounter, DangeonMaster, PropositionTeam,OppositionTeam
+from Classes import EventBank, MakeChoice, OptionsBank, RoundCounter, DangeonMaster, PropositionTeam,OppositionTeam
 
 
 def create_an_event(event):
@@ -58,7 +58,7 @@ def main():
     description = input("Description and goals of the side: ")
     name_of_proposition = input("Choice name for Team 1: ")
 
-    options_proposition = BankOfOptions([])
+    options_proposition = OptionsBank([])
     for i in range(1, 5):
         print("Enter character of option", i, ": ")
         num_of_option = input()
@@ -70,7 +70,7 @@ def main():
     name_of_opposition = input("Choice name for second team: ")
     opposion_description = input("Description and goals of the side: ")
 
-    options_opposition = BankOfOptions([])
+    options_opposition = OptionsBank([])
     for i in range(1, 4):
         print("Enter character of option", i, ": ")
         num_of_option = input()
