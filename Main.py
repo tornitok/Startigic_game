@@ -1,4 +1,5 @@
-from Classes import EventBank, MakeChoice, OptionsBank, RoundCounter, DangeonMaster, PropositionTeam,OppositionTeam
+from Classes import EventBank, OptionsBank, RoundCounter, DangeonMaster, PropositionTeam,OppositionTeam
+from Classes.unused import MakeChoice
 
 
 def create_an_event(event):

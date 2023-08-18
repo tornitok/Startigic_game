@@ -1,37 +1,29 @@
-def init(self, context, event, goal, score):
-    self.context = context
-    self.event = event
-    self.goal = goal
-    self.score = score
+import PropositionTeam
+import EventBank
+import OppositionTeam
+import RoundCounter
+import OptionsBank
+
+class DangeonMaster:
+    def __init__(self):
+        self.proposition_team = PropositionTeam
+        self.opposition_team = OppositionTeam
+        self.event_bank = EventBank
+        self.round_counter = RoundCounter
+        self.options_bank = OptionsBank
 
 
-    def get_score(self):
-        return self.score
+    def add_event(self, event):
+         self.event_bank.append(event)
 
+    def add_team(self,team_op,team_prop):
+        self.proposition_team.append(team_op)
+        self.opposition_team.append(team_prop)
 
-    def set_score(self, score):
-        self.score = score
+        return f'В игру добавлены {team_op} и {team_prop}'
 
+    def round_counter(self):
+        print(f"Начинается {self.round_counter} раунд")
+        self.round_counter += 1
 
-    def get_goal(self):
-        return self.goal
-
-
-    def set_goal(self, goal):
-        self.goal = goal
-
-
-    def get_event(self):
-        return self.event
-
-
-def set_event(self, event):
-    self.event = event
-
-
-def get_context(self):
-    return self.context
-
-
-def set_context(self, context):
-    self.context = context
+    def

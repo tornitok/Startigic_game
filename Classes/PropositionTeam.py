@@ -29,9 +29,4 @@ class PropositionTeam:
 
             except ValueError:
                 print("Invalid option. Chose one of the available options")
-            
-            
 
-        
-            
-        
